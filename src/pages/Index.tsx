@@ -1,6 +1,8 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
+import { Portfolio } from "@/components/Portfolio";
+import { Location } from "@/components/Location";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 
 const Index = () => {
@@ -10,7 +12,9 @@ const Index = () => {
       <main>
         <Hero />
         <Services />
-        {/* Próximas seções: Why Us, Portfólio, Depoimentos, Sobre, Processo, CTA, Contato, Footer */}
+        <Portfolio />
+        <Location />
+        {/* Próximas seções: Why Us, Depoimentos, Sobre, Processo, Footer */}
       </main>
       <WhatsAppFloat />
     </div>
