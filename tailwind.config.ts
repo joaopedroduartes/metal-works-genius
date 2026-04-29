@@ -7,21 +7,29 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+      padding: "1.5rem",
+      screens: { "2xl": "1400px" },
     },
     extend: {
+      fontFamily: {
+        display: ['"Bebas Neue"', 'Inter', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        surface: {
+          DEFAULT: "hsl(var(--surface))",
+          2: "hsl(var(--surface-2))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          dark: "hsl(var(--primary-dark))",
+          glow: "hsl(var(--primary-glow))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -47,6 +55,10 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        whatsapp: {
+          DEFAULT: "hsl(var(--whatsapp))",
+          foreground: "hsl(var(--whatsapp-foreground))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -63,27 +75,39 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      backgroundImage: {
+        "gradient-primary": "var(--gradient-primary)",
+        "gradient-hero": "var(--gradient-hero)",
+        "gradient-cta": "var(--gradient-cta)",
+      },
+      boxShadow: {
+        glow: "var(--shadow-glow)",
+        "glow-lg": "var(--shadow-glow-lg)",
+        elevated: "var(--shadow-elevated)",
+      },
       keyframes: {
-        "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+        "accordion-down": { from: { height: "0" }, to: { height: "var(--radix-accordion-content-height)" } },
+        "accordion-up": { from: { height: "var(--radix-accordion-content-height)" }, to: { height: "0" } },
+        "pulse-ring": {
+          "0%": { transform: "scale(1)", opacity: "0.6" },
+          "100%": { transform: "scale(1.6)", opacity: "0" },
         },
-        "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+        "spark-rise": {
+          "0%": { transform: "translateY(0) scale(1)", opacity: "0" },
+          "10%": { opacity: "1" },
+          "100%": { transform: "translateY(-120vh) scale(0.4)", opacity: "0" },
+        },
+        "shimmer": {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "pulse-ring": "pulse-ring 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "spark-rise": "spark-rise 6s linear infinite",
+        "shimmer": "shimmer 2.5s linear infinite",
       },
     },
   },
